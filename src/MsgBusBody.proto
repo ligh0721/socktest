@@ -1,0 +1,17 @@
+message WeiboPkgHeadExt
+{
+    optional uint32 length = 1;
+    optional bytes body = 2;
+}
+
+//标志位系统
+message BitmapProtocol
+{
+    optional WeiboPkgHeadExt weibo_pkg_head_ext = 1;
+    optional uint32 from_uin            = 2;
+    optional uint32 to_uin              = 3;
+    optional uint32 flag_id             = 4;
+    optional uint32 old_value           = 5;
+    optional uint32 new_value           = 6;
+    optional bytes buff                 = 7;
+}
