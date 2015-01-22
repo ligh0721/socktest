@@ -1,4 +1,4 @@
-#!/usr/local/bin/socktest
+#!/usr/bin/env socktest
 
 bindl %1
 listen
