@@ -294,7 +294,7 @@ size_t CSectionBase::Serialize(void* pBuf, size_t uPos, FILE* pIn, FILE* pOut, s
     stSerInfo.pSec = this;
     roGlbSymVal.insert(pair<string, SYMBOLVALUE > (sFullName, stSerInfo));
     
-    sprintf(szBuf, "%lu", m_uSize);
+    sprintf(szBuf, "%zu", m_uSize);
     stSerInfo.sRawInput = string(szBuf);
     stSerInfo.pSec = CSectionBase::CreateSectionBase(roSym, "dwLENGTH");
     stSerInfo.uPos = -1;
@@ -603,7 +603,7 @@ size_t CSectionStruct::Serialize(void* pBuf, size_t uPos, FILE* pIn, FILE* pOut,
     }
     SYMBOLVALUE stSerInfo;
     
-    sprintf(szBuf, "%lu", m_uSize);
+    sprintf(szBuf, "%zu", m_uSize);
     stSerInfo.sRawInput = string(szBuf);
     stSerInfo.pSec = CSectionBase::CreateSectionBase(m_oSym, "dwLENGTH");
     stSerInfo.uPos = -1;
@@ -853,7 +853,7 @@ size_t CSectionArray::Serialize(void* pBuf, size_t uPos, FILE* pIn, FILE* pOut, 
     }
     
     SYMBOLVALUE stSerInfo;
-    sprintf(szBuf, "%lu", m_uSize);
+    sprintf(szBuf, "%zu", m_uSize);
     stSerInfo.sRawInput = string(szBuf);
     stSerInfo.pSec = CSectionBase::CreateSectionBase(roSym, "dwLENGTH");
     stSerInfo.uPos = -1;

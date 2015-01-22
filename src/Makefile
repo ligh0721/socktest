@@ -49,7 +49,7 @@ pack: all
 	-mkdir -p $(PREFIX)/include/socktest
 	-mkdir -p $(PREFIX)/lib/socktest
 	-mkdir -p $(PREFIX)/bin
-	-cp $(SOCKTEST) $(BINDIR)/sendf.st $(BINDIR)/recvf.st $(PREFIX)/bin/
+	-cp $(SOCKTEST) sendf.st recvf.st $(PREFIX)/bin/
 	-cp $(BINDIR)/*.slb $(PREFIX)/lib/socktest/
 	-cp $(SOCKTESTLIB) $(PREFIX)/lib/
 	-cp $(patsubst %.a, %.so, $(SOCKTESTLIB)) $(PREFIX)/lib/

@@ -18,6 +18,7 @@
 
 #include <algorithm>
 #include <stdint.h>
+#include <inttypes.h>
 
 #ifdef WIN32
 #include <winsock.h>
@@ -49,7 +50,7 @@ using namespace std;
 
 #define LOG_POS(fmt, args...) do { fprintf(stderr, "==[ %s() | %s: %d | "fmt" ]==\n", __FUNCTION__, __FILE__, __LINE__, ##args); } while (false)
 
-#define SOCKTEST_VERSION    50
+#define SOCKTEST_VERSION    51
 
 #include "Socket.h"
 #include "Section.h"
