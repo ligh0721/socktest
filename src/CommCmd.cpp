@@ -1427,6 +1427,12 @@ DEFCMDPROC(CmdCapArpFile)
                 sDAddr = inet_ntoa(*(struct in_addr*)pArpHdr->ar_tip);
                 PWriteString("%02x:%02x:%02x:%02x:%02x:%02x (%s) -> %02x:%02x:%02x:%02x:%02x:%02x (%s)\n", pArpHdr->ar_sha[0], pArpHdr->ar_sha[1], pArpHdr->ar_sha[2], pArpHdr->ar_sha[3], pArpHdr->ar_sha[4], pArpHdr->ar_sha[5], sSAddr.c_str(), pArpHdr->ar_tha[0], pArpHdr->ar_tha[1], pArpHdr->ar_tha[2], pArpHdr->ar_tha[3], pArpHdr->ar_tha[4], pArpHdr->ar_tha[5], sDAddr.c_str());
                 //PWriteString("", pArpReq->arp_pa.)
+                iRet = fwrite(pArpHdr, 1, sizeof(struct etharphdr), pFile);
+                if (iRet < 0)
+                {
+                    break;
+                }
+                fflush(pFile);
             }
         }
         iRet = g_oEthSock.Recv(szStr, sizeof (szStr));
